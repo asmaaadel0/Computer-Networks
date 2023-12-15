@@ -1,0 +1,40 @@
+At time [0], Node[0] , Introducing channel error with code =[0000] .
+At time [0.5], Node[0] [sent] frame with seq_num=[0] and payload=[$aaaa$] and trailer=[00110010] , Modified [-1] , Lost [No], Duplicate [0], Delay [1.5]. 
+At time [0], Node[0] , Introducing channel error with code =[0000] .
+At time [0.5], Node[0] [sent] frame with seq_num=[1] and payload=[$b/$bbb$] and trailer=[11011010] , Modified [-1] , Lost [No], Duplicate [0], Delay [1.5]. 
+At time [0], Node[0] , Introducing channel error with code =[0000] .
+At time [0.5], Node[0] [sent] frame with seq_num=[2] and payload=[$ccc/$/$c$] and trailer=[10000011] , Modified [-1] , Lost [No], Duplicate [0], Delay [1.5]. 
+At time [3], Node[0] , Introducing channel error with code =[0000] .
+At time [3.5], Node[0] [sent] frame with seq_num=[0] and payload=[$d///$ddd$] and trailer=[01110100] , Modified [-1] , Lost [No], Duplicate [0], Delay [1.5]. 
+At time [4.5], Node[0] , Introducing channel error with code =[0000] .
+At time [5], Node[0] [sent] frame with seq_num=[1] and payload=[$/$eeee/$$] and trailer=[01111011] , Modified [-1] , Lost [No], Duplicate [0], Delay [1.5]. 
+At time [6], Node[0] , Introducing channel error with code =[0100] .
+At time [6.5], Node[0] [sent] frame with seq_num=[2] and payload=[$aa$] and trailer=[11110100] , Modified [-1] , Lost [Yes], Duplicate [0], Delay [1.5]. 
+Time out event at time [13.5], at Node[0] for frame with seq_num= [0]
+At time [14], Node[0] [sent] frame with seq_num=[0] and payload=[$d///$ddd$] and trailer=[00011011] , Modified [-1] , Lost [No], Duplicate [0], Delay [1.5]. 
+At time [14], Node[0] [sent] frame with seq_num=[1] and payload=[$/$eeee/$$] and trailer=[00100010] , Modified [-1] , Lost [No], Duplicate [0], Delay [1.5]. 
+At time [14], Node[0] [sent] frame with seq_num=[2] and payload=[$aa$] and trailer=[00111101] , Modified [-1] , Lost [Yes], Duplicate [0], Delay [1.5]. 
+Time out event at time [14], at Node[0] for frame with seq_num= [0]
+At time [14.5], Node[0] [sent] frame with seq_num=[0] and payload=[$d///$ddd$] and trailer=[00011011] , Modified [-1] , Lost [No], Duplicate [0], Delay [1.5]. 
+At time [14.5], Node[0] [sent] frame with seq_num=[1] and payload=[$/$eeee/$$] and trailer=[00100010] , Modified [-1] , Lost [No], Duplicate [0], Delay [1.5]. 
+At time [14.5], Node[0] [sent] frame with seq_num=[2] and payload=[$aa$] and trailer=[00111101] , Modified [-1] , Lost [Yes], Duplicate [0], Delay [1.5]. 
+Time out event at time [14.5], at Node[0] for frame with seq_num= [0]
+At time [15], Node[0] [sent] frame with seq_num=[0] and payload=[$d///$ddd$] and trailer=[00011011] , Modified [-1] , Lost [No], Duplicate [0], Delay [1.5]. 
+At time [15], Node[0] [sent] frame with seq_num=[1] and payload=[$/$eeee/$$] and trailer=[00100010] , Modified [-1] , Lost [No], Duplicate [0], Delay [1.5]. 
+At time [15], Node[0] [sent] frame with seq_num=[2] and payload=[$aa$] and trailer=[00111101] , Modified [-1] , Lost [Yes], Duplicate [0], Delay [1.5]. 
+Time out event at time [15], at Node[0] for frame with seq_num= [0]
+At time [15.5], Node[0] [sent] frame with seq_num=[0] and payload=[$d///$ddd$] and trailer=[00011011] , Modified [-1] , Lost [No], Duplicate [0], Delay [1.5]. 
+At time [15.5], Node[0] [sent] frame with seq_num=[1] and payload=[$/$eeee/$$] and trailer=[00100010] , Modified [-1] , Lost [No], Duplicate [0], Delay [1.5]. 
+At time [15.5], Node[0] [sent] frame with seq_num=[2] and payload=[$aa$] and trailer=[00111101] , Modified [-1] , Lost [Yes], Duplicate [0], Delay [1.5]. 
+Time out event at time [15.5], at Node[0] for frame with seq_num= [0]
+At time [16], Node[0] [sent] frame with seq_num=[0] and payload=[$d///$ddd$] and trailer=[00011011] , Modified [-1] , Lost [No], Duplicate [0], Delay [1.5]. 
+At time [16], Node[0] [sent] frame with seq_num=[1] and payload=[$/$eeee/$$] and trailer=[00100010] , Modified [-1] , Lost [No], Duplicate [0], Delay [1.5]. 
+At time [16], Node[0] [sent] frame with seq_num=[2] and payload=[$aa$] and trailer=[00111101] , Modified [-1] , Lost [Yes], Duplicate [0], Delay [1.5]. 
+Time out event at time [16], at Node[0] for frame with seq_num= [0]
+At time [16.5], Node[0] [sent] frame with seq_num=[0] and payload=[$d///$ddd$] and trailer=[00011011] , Modified [-1] , Lost [No], Duplicate [0], Delay [1.5]. 
+At time [16.5], Node[0] [sent] frame with seq_num=[1] and payload=[$/$eeee/$$] and trailer=[00100010] , Modified [-1] , Lost [No], Duplicate [0], Delay [1.5]. 
+At time [16.5], Node[0] [sent] frame with seq_num=[2] and payload=[$aa$] and trailer=[00111101] , Modified [-1] , Lost [Yes], Duplicate [0], Delay [1.5]. 
+Time out event at time [16.5], at Node[0] for frame with seq_num= [0]
+At time [17], Node[0] [sent] frame with seq_num=[0] and payload=[$d///$ddd$] and trailer=[00011011] , Modified [-1] , Lost [No], Duplicate [0], Delay [1.5]. 
+At time [17], Node[0] [sent] frame with seq_num=[1] and payload=[$/$eeee/$$] and trailer=[00100010] , Modified [-1] , Lost [No], Duplicate [0], Delay [1.5]. 
+At time [17], Node[0] [sent] frame with seq_num=[2] and payload=[$aa$] and trailer=[00111101] , Modified [-1] , Lost [Yes], Duplicate [0], Delay [1.5]. 

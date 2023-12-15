@@ -1,0 +1,8 @@
+At time [2], Node[1] Sending [ACK] with number [1] ,loss [No].
+At time [3.5], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [5], Node[1] Sending [ACK] with number [0] ,loss [No].
+At time [15.5], Node[1] Sending [NACK] with number [0] ,loss [No].
+At time [16], Node[1] Sending [NACK] with number [0] ,loss [No].
+At time [16.5], Node[1] Sending [NACK] with number [0] ,loss [No].
+At time [17], Node[1] Sending [NACK] with number [0] ,loss [No].
+At time [17.5], Node[1] Sending [NACK] with number [0] ,loss [No].
