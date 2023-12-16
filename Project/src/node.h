@@ -39,18 +39,18 @@ private:
     simtime_t timeout;
     std::ofstream fout;
 
-    void ReadFile(const char *filename);
+    void readFile(const char *filename);
     std::string framing(std::string payload);
+    std::string deFraming(std::string framedPayload);
 
-    void printReadingMessage(int m);
+    void printReadingMessage(int m, int nextFrameToSendTemp);
     void printTimeoutMessage(int ackExpected);
-    void printSendingMessage(MyMessage_Base* message, int bitToModify, std::string lossMsg, int dup, double timeDelay);
-    void printSendingReceiverMessage(std::string lossMsg, std::string isAck, int number);
+    void printSendingMessage(MyMessage_Base* message, int bitToModify, std::string lossMsg, int dup, int delay,int m, int nextFrameToSendTemp);
+    void printSendingReceiverMessage(std::string payload, std::string lossMsg, std::string isAck, int number);
 
     char calculateChecksum(std::string data) ;
     std::string calculateOnesComplement(const std::string& hexString);
     bool checkMessage(MyMessage_Base* message);
-
 
     void sendingMessageHandler(MyMessage_Base *message, const std::bitset<4> currentErrors, int &m, int &nextFrameToSendTemp);
     void FrameSending();
@@ -60,11 +60,6 @@ private:
     int nextFrameToSend;
     int ackExpected;
     int frameExpected;
-    std::string starternode;
-//    int starternodeid;
-//    int starttime;
-//    std::vector<std::string> errors;
-//    simtime_t timeout;
 
     void finish() override;
 
