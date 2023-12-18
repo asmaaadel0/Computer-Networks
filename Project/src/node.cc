@@ -241,7 +241,6 @@ bool Node::checkMessage(MyMessage_Base* message)
 
     hexa << std::setw(2) << std::setfill('0') << static_cast<int>(message->getTrailer());
     std::string sumHex = hexa.str();
-//    EV << "message->getTrailer() = " << sumHex << endl;
     sumHex = sumHex.substr(sumHex.length()-2, sumHex.length());
 
     for (size_t i = 0; i < paddedHexString.length(); i += 2) {
@@ -259,7 +258,6 @@ bool Node::checkMessage(MyMessage_Base* message)
         ss << std::hex << sum;
         sumHex = ss.str();
     }
-//    EV << "sumHex = " << sumHex << endl;
     return (sumHex == "ff");
 }
 
@@ -386,8 +384,10 @@ void Node::handleMessage(cMessage *msg)
 
             nbuffered += 1;
             nextFrameToSend = nextFrameToSend + 1;
+            std::cout << "timeoutEvents =" << timeoutEvents.size() << std::endl;
 
             cancelEvent(timeoutEvents[m]);
+            std::cout << "m =" << m << std::endl;
             scheduleAt(simTime() + par("TO").doubleValue() + (par("PT").doubleValue() * (m + 1 - nextFrameToSendTemp)), timeoutEvents[m]);
 
             if (m == nextFrameToSendTemp)
@@ -406,17 +406,21 @@ void Node::handleMessage(cMessage *msg)
         MyMessage_Base *message = check_and_cast<MyMessage_Base *>(msg);
 
         // If it's a ACK message, so cancel timeout event:-
-        if (message->getFrameType() == 1 && message->getAckNack() == (ackExpected + 1) % (windowSize)){
+        if (message->getFrameType() == 1 && message->getAckNack() == (ackExpected + 1) % windowSize){
+            std::cout << "nbuffered = " << nbuffered << std::endl;
             nbuffered = nbuffered - 1;
             cancelEvent(timeoutEvents[ackExpected]);
+            std::cout << "testttttt" << std::endl;
             ackExpected = ackExpected + 1;
         }
-        else if (message->getFrameType() == 1 && message->getAckNack() > (ackExpected + 1) % (windowSize)){
-            while(message->getAckNack() != (ackExpected + 1)%windowSize){
+        else if (message->getFrameType() == 1){
+            while(message->getAckNack() != (ackExpected + 1) % windowSize){
+                std::cout << "nbuffered = " << nbuffered << std::endl;
                 nbuffered = nbuffered - 1;
                 cancelEvent(timeoutEvents[ackExpected]);
                 ackExpected = ackExpected + 1;
             }
+            std::cout << "nbuffered = " << nbuffered << std::endl;
             nbuffered = nbuffered - 1;
             cancelEvent(timeoutEvents[ackExpected]);
             ackExpected = ackExpected + 1;
@@ -478,6 +482,8 @@ void Node::handleMessage(cMessage *msg)
                     timeoutEvents.push_back(timeoutEvent);
                     scheduleAt(simTime() + par("TO").doubleValue() + (par("PT").doubleValue() * (m + 1 - nextFrameToSendTemp)), timeoutEvents[m]);
 
+                    std::cout << "timeoutEvents =" << timeoutEvents.size() << ", m = " << m << ", nbuffered" << nbuffered << std::endl;
+
                     sendingMessageHandler(sendingMessages[m], currentErrors, m, nextFrameToSendTemp, true);
                 }
             }
@@ -488,48 +494,36 @@ void Node::handleMessage(cMessage *msg)
             MyMessage_Base *newMessage = message->dup();
             bool isTrue = checkMessage(message);
             bool isLost = uniform(0, 100) < (int)par("LP").doubleValue();
-//            if(deFraming(newMessage->getPayload()) == "b$bbb") {
-//                isLost = true;
-//            }
+
+            if(deFraming(newMessage->getPayload()) == "b$bbb") {
+                isLost = true;
+            }
 
             int number = 0;
-            std::string isAck = "ACK";
-            std::string lossMsg = "No";
-            newMessage->setFrameType(1);
+            std::string isAck = "NACK";
+            std::string lossMsg = "Yes";
+            newMessage->setFrameType(0);
 
-            if (isTrue && !isLost) {
+            if (isTrue) {
                 frameExpected = frameExpected + 1;
-                number = frameExpected % windowSize;
-                newMessage->setAckNack(number);
+                newMessage->setFrameType(1);
+                isAck = "ACK";
+                printReceivedReceiverMessage(deFraming(newMessage->getPayload()), message->getHeader());
             }
-            else if (isTrue && isLost) {
-                frameExpected = frameExpected + 1;
-                number = frameExpected % windowSize;
-                newMessage->setAckNack(number);
-                lossMsg = "Yes";
-            }
-            else if (!isTrue && !isLost) {
-                number = frameExpected % windowSize;
-                newMessage->setAckNack(number);
-                newMessage->setFrameType(0);
-                isAck = "NACK";
-            }
-            else if (!isTrue && isLost) {
-                number = frameExpected % windowSize;
-                newMessage->setAckNack(number);
-                newMessage->setFrameType(0);
-                lossMsg = "Yes";
-                isAck = "NACK";
-            }
-            if (isTrue)
-                printReceivedReceiverMessage(deFraming(newMessage->getPayload()), number);
+            number = frameExpected % windowSize;
+            newMessage->setAckNack(number);
 
+//              later:print original message in first message only?
 //            printSendingReceiverMessage(deFraming(newMessage->getPayload()), lossMsg, isAck, number);
+            if(!isLost)
+                lossMsg = "No";
+
             printSendingReceiverMessage(lossMsg, isAck, number);
 
-            if (!isLost)
-//                later: with PT or without?
+            if (!isLost){
+//              later: with PT or without?
                 sendDelayed(newMessage, par("TD").doubleValue() + par("PT").doubleValue(), "out");
+            }
         }
         cancelAndDelete(message);
     }

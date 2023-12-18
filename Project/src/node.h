@@ -59,6 +59,7 @@ private:
 
     std::vector<cMessage *> timeoutEvents;
     std::vector<MyMessage_Base *> sendingMessages;
+
     int nbuffered;
     int nextFrameToSend;
     int ackExpected;
