@@ -1,0 +1,74 @@
+Uploading payload = [m0], Node[1] and seq_num = [0] to the network layer
+At time [2], Node[1] Sending [ACK] with number [1] ,loss [No].
+At time [3], Node[1] Sending [ACK] with number [1] ,loss [No].
+At time [3.1], Node[1] Sending [ACK] with number [1] ,loss [No].
+Uploading payload = [m1], Node[1] and seq_num = [1] to the network layer
+At time [6.5], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [7.5], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [7.6], Node[1] Sending [ACK] with number [2] ,loss [No].
+Uploading payload = [m2], Node[1] and seq_num = [2] to the network layer
+At time [13.5], Node[1] Sending [ACK] with number [3] ,loss [No].
+At time [16.6], Node[1] Sending [ACK] with number [3] ,loss [No].
+Uploading payload = [m3], Node[1] and seq_num = [3] to the network layer
+At time [18], Node[1] Sending [ACK] with number [4] ,loss [No].
+At time [18.1], Node[1] Sending [ACK] with number [4] ,loss [No].
+Uploading payload = [m4], Node[1] and seq_num = [4] to the network layer
+At time [25], Node[1] Sending [ACK] with number [0] ,loss [No].
+At time [25.1], Node[1] Sending [ACK] with number [0] ,loss [No].
+At time [26.1], Node[1] Sending [ACK] with number [0] ,loss [No].
+At time [28], Node[1] Sending [ACK] with number [0] ,loss [No].
+At time [30.6], Node[1] Sending [ACK] with number [0] ,loss [No].
+Uploading payload = [m5], Node[1] and seq_num = [0] to the network layer
+At time [36], Node[1] Sending [ACK] with number [1] ,loss [No].
+Uploading payload = [m6], Node[1] and seq_num = [1] to the network layer
+At time [36.6], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [37.5], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [39.6], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [39.7], Node[1] Sending [ACK] with number [2] ,loss [No].
+Uploading payload = [m7], Node[1] and seq_num = [2] to the network layer
+At time [41.1], Node[1] Sending [ACK] with number [3] ,loss [No].
+At time [43], Node[1] Sending [ACK] with number [3] ,loss [No].
+Uploading payload = [m8], Node[1] and seq_num = [3] to the network layer
+At time [48], Node[1] Sending [ACK] with number [4] ,loss [No].
+At time [48.1], Node[1] Sending [ACK] with number [4] ,loss [No].
+At time [48.2], Node[1] Sending [ACK] with number [4] ,loss [No].
+At time [49], Node[1] Sending [ACK] with number [4] ,loss [No].
+At time [49.1], Node[1] Sending [ACK] with number [4] ,loss [No].
+At time [52.5], Node[1] Sending [NACK] with number [4] ,loss [No].
+At time [53.5], Node[1] Sending [ACK] with number [4] ,loss [No].
+At time [53.6], Node[1] Sending [ACK] with number [4] ,loss [No].
+Uploading payload = [m9], Node[1] and seq_num = [4] to the network layer
+At time [55.5], Node[1] Sending [ACK] with number [0] ,loss [No].
+At time [56], Node[1] Sending [NACK] with number [0] ,loss [No].
+At time [56.1], Node[1] Sending [NACK] with number [0] ,loss [No].
+Uploading payload = [m10], Node[1] and seq_num = [0] to the network layer
+At time [59], Node[1] Sending [ACK] with number [1] ,loss [No].
+At time [59.1], Node[1] Sending [ACK] with number [1] ,loss [No].
+At time [60.5], Node[1] Sending [NACK] with number [1] ,loss [No].
+At time [60.6], Node[1] Sending [NACK] with number [1] ,loss [No].
+At time [62.1], Node[1] Sending [ACK] with number [1] ,loss [No].
+At time [63.5], Node[1] Sending [NACK] with number [1] ,loss [No].
+Uploading payload = [m11], Node[1] and seq_num = [1] to the network layer
+At time [63.5], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [63.6], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [63.6], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [63.6], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [63.7], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [65.1], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [65.2], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [66.5], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [68.1], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [70.6], Node[1] Sending [ACK] with number [2] ,loss [No].
+Uploading payload = [m12], Node[1] and seq_num = [2] to the network layer
+At time [77], Node[1] Sending [ACK] with number [3] ,loss [No].
+At time [78.1], Node[1] Sending [ACK] with number [3] ,loss [No].
+At time [82.6], Node[1] Sending [ACK] with number [3] ,loss [No].
+Uploading payload = [m13], Node[1] and seq_num = [3] to the network layer
+At time [88], Node[1] Sending [ACK] with number [4] ,loss [No].
+At time [88.6], Node[1] Sending [NACK] with number [4] ,loss [No].
+Uploading payload = [m14], Node[1] and seq_num = [4] to the network layer
+At time [91.6], Node[1] Sending [ACK] with number [0] ,loss [No].
+At time [93.1], Node[1] Sending [NACK] with number [0] ,loss [No].
+Uploading payload = [m15], Node[1] and seq_num = [0] to the network layer
+At time [96.1], Node[1] Sending [ACK] with number [1] ,loss [No].
+At time [96.2], Node[1] Sending [ACK] with number [1] ,loss [No].
