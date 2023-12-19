@@ -93,12 +93,16 @@ std::string Node::deFraming(std::string framedPayload)
 }
 
 
-void Node::printReadingMessage(int m, int nextFrameToSendTemp)
+void Node::printReadingMessage(int m, int nextFrameToSendTemp, bool resend)
 {
+    omnetpp::simtime_t time = simTime() + par("PT").doubleValue() * (m - nextFrameToSendTemp);
+    if (resend) {
+        time += 0.001;
+    }
 
-    EV << "At time [" << simTime() + par("PT").doubleValue() * (m - nextFrameToSendTemp) << "]," << " Node[" << getIndex()
+    EV << "At time [" << time << "]," << " Node[" << getIndex()
             << "] , Introducing channel error with code = [" << errors[m] << "] ." << endl;
-    fout << "At time [" << simTime() + par("PT").doubleValue() * (m - nextFrameToSendTemp) << "]," << " Node[" << getIndex()
+    fout << "At time [" << time << "]," << " Node[" << getIndex()
                 << "] , Introducing channel error with code =[" << errors[m] << "] ." << endl;
 }
 
@@ -110,10 +114,13 @@ void Node::printTimeoutMessage(int ackExpected)
 
 }
 
-void Node::printSendingMessage(MyMessage_Base* message, int bitToModify, std::string lossMsg, int dup, int delay,int m, int nextFrameToSendTemp) {
+void Node::printSendingMessage(MyMessage_Base* message, int bitToModify, std::string lossMsg, int dup, int delay,int m, int nextFrameToSendTemp, bool resend) {
     omnetpp::simtime_t time = simTime() + par("PT").doubleValue() * (m + 1 - nextFrameToSendTemp);
     if(dup == 2) {
         time  += par("DD").doubleValue();
+    }
+    if(resend) {
+        time += 0.001;
     }
     std::bitset<8> trailer(message->getTrailer());
     fout <<  "At time [" << time << "]," <<
@@ -277,7 +284,7 @@ void Node::initialize()
 
 }
 
-void Node::sendingMessageHandler(MyMessage_Base *message, const std::bitset<4> currentErrors, int m, int nextFrameToSendTemp, bool isNewMessage)
+void Node::sendingMessageHandler(MyMessage_Base *message, const std::bitset<4> currentErrors, int m, int nextFrameToSendTemp, bool resend)
 {
     int modify = currentErrors[3] ;
     int loss = currentErrors[2];
@@ -314,12 +321,15 @@ void Node::sendingMessageHandler(MyMessage_Base *message, const std::bitset<4> c
     }
     message->setPayload(sendMsg.c_str());
 
-    printSendingMessage(message, bitToModify, lossMsg, dup, delay, m, nextFrameToSendTemp);
+    printSendingMessage(message, bitToModify, lossMsg, dup, delay, m, nextFrameToSendTemp, resend);
+    if (resend) {
+        time += 0.001;
+    }
     if(dup)
     {
         MyMessage_Base *dupFrame = message->dup();
         std::bitset<8> trailer2(dupFrame->getTrailer());
-        printSendingMessage(dupFrame, bitToModify, lossMsg, 2, delay, m, nextFrameToSendTemp);
+        printSendingMessage(dupFrame, bitToModify, lossMsg, 2, delay, m, nextFrameToSendTemp, resend);
         sendDelayed(dupFrame, (time+par("DD").doubleValue()), "out");
     }
 
@@ -350,7 +360,7 @@ void Node::handleMessage(cMessage *msg)
 //            sendingMessages.emplace_back(message);
             std::bitset<4> currentErrors = errors[m];
 
-            printReadingMessage(m, 0);
+            printReadingMessage(m, 0, false);
 
             message->setHeader(m);
             message->setTrailer(calculateChecksum(framing(originalMsg[m])));
@@ -362,7 +372,7 @@ void Node::handleMessage(cMessage *msg)
 
             nbuffered += 1;
             nextFrameToSend = nextFrameToSend + 1;
-            sendingMessageHandler(message, currentErrors, m, 0, true);
+            sendingMessageHandler(message, currentErrors, m, 0, false);
         }
     }
 //    If it's timeout message, so re-send messages again:-
@@ -392,12 +402,12 @@ void Node::handleMessage(cMessage *msg)
             if (m == nextFrameToSendTemp)
             {
                 std::bitset<4> currentErrors = 0000;
-                sendingMessageHandler(message2, currentErrors, m, nextFrameToSendTemp, false);
+                sendingMessageHandler(message2, currentErrors, m, nextFrameToSendTemp, true);
             }
             else
             {
-                printReadingMessage(m, nextFrameToSendTemp);
-                sendingMessageHandler(message2, errors[m], m, nextFrameToSendTemp, false);
+                printReadingMessage(m, nextFrameToSendTemp, true);
+                sendingMessageHandler(message2, errors[m], m, nextFrameToSendTemp, true);
             }
         }
     }
@@ -437,7 +447,7 @@ void Node::handleMessage(cMessage *msg)
           }
 
         // If it's a NACK message, so re-send it again:-
-        else if (message->getFrameType() == 0 && message->getAckNack() == (ackExpected) % (windowSize+1)){
+        else if (message->getFrameType() == 0 && message->getAckNack() == (ackExpected) % (windowSize + 1)){
             nextFrameToSend = ackExpected;
             int nextFrameToSendTemp = nextFrameToSend;
             nbuffered = 0;
@@ -445,7 +455,7 @@ void Node::handleMessage(cMessage *msg)
             {
                 MyMessage_Base *message2 = new MyMessage_Base();
 
-                message2->setHeader(m % (windowSize+1));
+                message2->setHeader(m % (windowSize + 1));
                 message2->setTrailer(calculateChecksum(framing(originalMsg[m])));
                 message2->setFrameType(2);
 
@@ -457,12 +467,12 @@ void Node::handleMessage(cMessage *msg)
                 if (m == nextFrameToSendTemp)
                 {
                     std::bitset<4> currentErrors = 0000;
-                    sendingMessageHandler(message2, currentErrors, m, nextFrameToSendTemp, false);
+                    sendingMessageHandler(message2, currentErrors, m, nextFrameToSendTemp, true);
                 }
                 else
                 {
-                    printReadingMessage(m, nextFrameToSendTemp);
-                    sendingMessageHandler(message2, errors[m], m, nextFrameToSendTemp, false);
+                    printReadingMessage(m, nextFrameToSendTemp, true);
+                    sendingMessageHandler(message2, errors[m], m, nextFrameToSendTemp, true);
                 }
             }
 
@@ -479,7 +489,7 @@ void Node::handleMessage(cMessage *msg)
 //                    sendingMessages.emplace_back(message);
 
                     std::bitset<4> currentErrors = errors[m];
-                    printReadingMessage(m, nextFrameToSendTemp);
+                    printReadingMessage(m, nextFrameToSendTemp, false);
 
                     message->setHeader(m % (windowSize+1));
                     message->setTrailer(calculateChecksum(framing(originalMsg[m])));
@@ -494,7 +504,7 @@ void Node::handleMessage(cMessage *msg)
 
 //                    std::cout << "timeoutEvents =" << timeoutEvents.size() << ", m = " << m << ", nbuffered" << nbuffered << std::endl;
 
-                    sendingMessageHandler(message, currentErrors, m, nextFrameToSendTemp, true);
+                    sendingMessageHandler(message, currentErrors, m, nextFrameToSendTemp, false);
                 }
             }
         }
