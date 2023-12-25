@@ -102,13 +102,18 @@ void Node::printReadingMessage(int m, int nextFrameToSendTemp, bool resend)
 
     EV << "At time [" << time << "]," << " Node[" << getIndex()
             << "] , Introducing channel error with code = [" << errors[m] << "] ." << endl;
+
+    fout.open("output.txt", std::fstream::app);
     fout << "At time [" << time << "]," << " Node[" << getIndex()
                 << "] , Introducing channel error with code =[" << errors[m] << "] ." << endl;
+    fout.close();
 }
 
 void Node::printTimeoutMessage(int ackExpected)
 {
+    fout.open("output.txt", std::fstream::app);
     fout << "Time out event at time [" << simTime() << "], at Node[" << getIndex() << "] for frame with seq_num= [" << ackExpected % (windowSize+1) << "]" << endl;
+    fout.close();
 
     EV << "Time out event at time [" << simTime() << "], at Node[" << getIndex() << "] for frame with seq_num= [" << ackExpected % (windowSize+1) << "]" << endl;
 
@@ -123,11 +128,14 @@ void Node::printSendingMessage(MyMessage_Base* message, int bitToModify, std::st
         time += 0.001;
     }
     std::bitset<8> trailer(message->getTrailer());
+
+    fout.open("output.txt", std::fstream::app);
     fout <<  "At time [" << time << "]," <<
         " Node[" << getIndex() << "] [sent] frame with seq_num=[" << message->getHeader() << "] and payload=[" << message->getPayload() << "]" <<
         " and trailer=["<< trailer<< "] , Modified [" << bitToModify << "] "
         ", Lost [" << lossMsg << "], Duplicate [" << dup << "], "
         "Delay [" << (delay ? par("ED").doubleValue() : 0) << "]. "<< endl;
+    fout.close();
 
     EV <<  "At time [" << time << "]," <<
         " Node[" << getIndex() << "] [sent] frame with seq_num=[" << message->getHeader() << "] and payload=[" << message->getPayload() << "]" <<
@@ -150,15 +158,21 @@ void Node::printSendingReceiverMessage(std::string lossMsg, std::string isAck, i
     EV << "At time [" << simTime() + par("PT").doubleValue() << "], Node[" << getIndex() << "] Sending [" << isAck
             << "] with number [" << number << "] ,loss [" << lossMsg << "]." << endl;
 
+    fout.open("output.txt", std::fstream::app);
     fout << "At time [" << simTime() + par("PT").doubleValue() << "], Node[" << getIndex() << "] Sending [" << isAck
             << "] with number [" << number << "] ,loss [" << lossMsg << "]." << endl;
+    fout.close();
+
 }
 
 void Node::printReceivedReceiverMessage(std::string payload, int number)
 {
     EV << "Uploading payload = [" << payload << "], Node[" << getIndex() << "] and seq_num = [" << number << "] to the network layer" << endl;
 
+    fout.open("output.txt", std::fstream::app);
     fout << "Uploading payload = [" << payload << "], Node[" << getIndex() << "] and seq_num = [" << number << "] to the network layer" << endl;
+    fout.close();
+
 }
 
 
@@ -278,9 +292,13 @@ void Node::initialize()
     ackExpected = 0;
     frameExpected = 0;
 
-    std::string outputFileName = "output" + std::to_string(getIndex()) + ".txt";
+//    std::string outputFileName = "output" + std::to_string(getIndex()) + ".txt";
+    std::string outputFileName = "output.txt";
 //    std::string outputFileName = "output.txt";
     fout.open(outputFileName);
+    fout.close();
+    // fout.open("output.txt", std::fstream::app);
+    // fout.close();
 
 }
 
@@ -605,5 +623,5 @@ void Node::finish()
     {
         cancelAndDelete(messages);
     }
-    fout.close();
+//    fout.close();
 }
