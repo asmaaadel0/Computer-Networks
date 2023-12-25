@@ -447,11 +447,7 @@ void Node::handleMessage(cMessage *msg)
             ackExpected = ackExpected + 1;
         }
         // asssume there is no delay ACK (or no delay NACK?)
-//        else if (message->getFrameType() == 1){
-//        else if (message->getFrameType() == 1 && message->getAckNack() > (ackExpected + 1) % windowSize){
-        else if (message->getFrameType() == 1 && abs( message->getAckNack()- (ackExpected + 1) )<= nbuffered -1){
-//        else if (message->getFrameType() == 1 && message->getAckNack()-1 > (ackExpected) % windowSize){
-//            EV << "samaa received accumulative ACK at " << simTime() <<"for message->getAckNack() = " << message->getAckNack() <<endl;
+        else if (message->getFrameType() == 1 && abs( message->getAckNack()- ((ackExpected + 1)%(windowSize+1)) )<= nbuffered -1){
             while(message->getAckNack() != (ackExpected + 1) % (windowSize+1)){
 //                std::cout << "nbuffered = " << nbuffered << std::endl;
                 nbuffered = nbuffered - 1;
