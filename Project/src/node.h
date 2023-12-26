@@ -46,7 +46,6 @@ private:
     void printReadingMessage(int m, int nextFrameToSendTemp, bool resend);
     void printTimeoutMessage(int ackExpected);
     void printSendingMessage(MyMessage_Base* message, int bitToModify, std::string lossMsg, int dup, int delay,int m, int nextFrameToSendTemp, bool resend);
-//    void printSendingReceiverMessage(std::string payload, std::string lossMsg, std::string isAck, int number);
     void printSendingReceiverMessage(std::string lossMsg, std::string isAck, int number);
     void printReceivedReceiverMessage(std::string payload, int number);
 
@@ -58,7 +57,6 @@ private:
     void FrameSending();
 
     std::vector<cMessage *> timeoutEvents;
-//    std::vector<MyMessage_Base *> sendingMessages;
 
     int nbuffered;
     int nextFrameToSend;
