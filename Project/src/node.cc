@@ -336,7 +336,8 @@ void Node::sendingMessageHandler(MyMessage_Base *message, const std::bitset<4> c
         MyMessage_Base *dupFrame = message->dup();
         std::bitset<8> trailer2(dupFrame->getTrailer());
         printSendingMessage(dupFrame, bitToModify, lossMsg, 2, delay, m, nextFrameToSendTemp, resend);
-        sendDelayed(dupFrame, (time+par("DD").doubleValue()), "out");
+        if(!loss)
+            sendDelayed(dupFrame, (time + par("DD").doubleValue()), "out");
     }
 
     if(!loss)
@@ -391,7 +392,6 @@ void Node::handleMessage(cMessage *msg)
         for (int m = nextFrameToSendTemp; m < nextFrameToSendTemp + (windowSize) && m < originalMsg.size(); m++)
         {
             MyMessage_Base *message2 = new MyMessage_Base();
-            printReadingMessage(m, nextFrameToSendTemp, true);
 
             message2->setHeader(m % (windowSize+1));
             message2->setTrailer(calculateChecksum(framing(originalMsg[m])));
@@ -410,6 +410,7 @@ void Node::handleMessage(cMessage *msg)
             }
             else
             {
+                printReadingMessage(m, nextFrameToSendTemp, true);
                 sendingMessageHandler(message2, errors[m], m, nextFrameToSendTemp, true);
             }
         }
@@ -447,7 +448,6 @@ void Node::handleMessage(cMessage *msg)
             for (int m = nextFrameToSendTemp; m < nextFrameToSendTemp + (windowSize) && m < originalMsg.size(); m++)
             {
                 MyMessage_Base *message2 = new MyMessage_Base();
-                printReadingMessage(m, nextFrameToSendTemp, true);
 
                 message2->setHeader(m % (windowSize + 1));
                 message2->setTrailer(calculateChecksum(framing(originalMsg[m])));
@@ -465,6 +465,7 @@ void Node::handleMessage(cMessage *msg)
                 }
                 else
                 {
+                    printReadingMessage(m, nextFrameToSendTemp, true);
                     sendingMessageHandler(message2, errors[m], m, nextFrameToSendTemp, true);
                 }
             }

@@ -1,112 +1,270 @@
 At time [0], Node[0] , Introducing channel error with code =[0000] .
-At time [0.5], Node[0] [sent] frame with seq_num=[0] and payload=[$aaaa$] and trailer=[00110010] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
-At time [0.5], Node[0] , Introducing channel error with code =[0000] .
-At time [1], Node[0] [sent] frame with seq_num=[1] and payload=[$b/$bbb$] and trailer=[11011010] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
-At time [1], Node[0] , Introducing channel error with code =[0000] .
-At time [1.5], Node[0] [sent] frame with seq_num=[2] and payload=[$ccc/$/$c$] and trailer=[10000011] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
-At time [1.5], Node[0] , Introducing channel error with code =[0000] .
-At time [2], Node[0] [sent] frame with seq_num=[3] and payload=[$d///$ddd$] and trailer=[01110100] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
-Uploading payload = [aaaa], Node[1] and seq_num = [0] to the network layer
+At time [0.5], Node[0] [sent] frame with seq_num=[0] and payload=[$m0$] and trailer=[00011010] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
+At time [0.5], Node[0] , Introducing channel error with code =[0001] .
+At time [1], Node[0] [sent] frame with seq_num=[1] and payload=[$m1$] and trailer=[00011001] , Modified [-1] , Lost [No], Duplicate [0], Delay [4]. 
+At time [1], Node[0] , Introducing channel error with code =[0010] .
+At time [1.5], Node[0] [sent] frame with seq_num=[2] and payload=[$m2$] and trailer=[00011000] , Modified [-1] , Lost [No], Duplicate [1], Delay [0]. 
+At time [1.6], Node[0] [sent] frame with seq_num=[2] and payload=[$m2$] and trailer=[00011000] , Modified [-1] , Lost [No], Duplicate [2], Delay [0]. 
+At time [1.5], Node[0] , Introducing channel error with code =[0011] .
+At time [2], Node[0] [sent] frame with seq_num=[3] and payload=[$m3$] and trailer=[00010111] , Modified [-1] , Lost [No], Duplicate [1], Delay [4]. 
+At time [2.1], Node[0] [sent] frame with seq_num=[3] and payload=[$m3$] and trailer=[00010111] , Modified [-1] , Lost [No], Duplicate [2], Delay [4]. 
+Uploading payload = [m0], Node[1] and seq_num = [0] to the network layer
 At time [2], Node[1] Sending [ACK] with number [1] ,loss [No].
-Uploading payload = [b$bbb], Node[1] and seq_num = [1] to the network layer
-At time [2.5], Node[1] Sending [ACK] with number [2] ,loss [No].
-Uploading payload = [ccc$$c], Node[1] and seq_num = [2] to the network layer
-At time [3], Node[1] Sending [ACK] with number [3] ,loss [No].
-Uploading payload = [d/$ddd], Node[1] and seq_num = [3] to the network layer
-At time [3.5], Node[1] Sending [ACK] with number [4] ,loss [No].
-At time [3], Node[0] , Introducing channel error with code =[0000] .
-At time [3.5], Node[0] [sent] frame with seq_num=[4] and payload=[$/$eeee/$$] and trailer=[01111011] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
-At time [3.5], Node[0] , Introducing channel error with code =[0100] .
-At time [4], Node[0] [sent] frame with seq_num=[0] and payload=[$aa$] and trailer=[11110100] , Modified [-1] , Lost [Yes], Duplicate [0], Delay [0]. 
-At time [4], Node[0] , Introducing channel error with code =[1000] .
-At time [4.5], Node[0] [sent] frame with seq_num=[1] and payload=[$bj$] and trailer=[11110010] , Modified [19] , Lost [No], Duplicate [0], Delay [0]. 
-At time [4.5], Node[0] , Introducing channel error with code =[0000] .
-At time [5], Node[0] [sent] frame with seq_num=[2] and payload=[$cc$] and trailer=[11110000] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
-Uploading payload = [$eeee$], Node[1] and seq_num = [4] to the network layer
-At time [5], Node[1] Sending [ACK] with number [0] ,loss [No].
-At time [6], Node[1] Sending [ACK] with number [0] ,loss [No].
-At time [6.5], Node[1] Sending [ACK] with number [0] ,loss [No].
-At time [6], Node[0] , Introducing channel error with code =[0001] .
-At time [6.5], Node[0] [sent] frame with seq_num=[3] and payload=[$dd$] and trailer=[11101110] , Modified [-1] , Lost [No], Duplicate [0], Delay [4]. 
-At time [12], Node[1] Sending [ACK] with number [0] ,loss [No].
-Time out event at time [14], at Node[0] for frame with seq_num= [0]
-At time [14.001], Node[0] , Introducing channel error with code =[0100] .
-At time [14.501], Node[0] [sent] frame with seq_num=[0] and payload=[$aa$] and trailer=[11110100] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
-At time [14.501], Node[0] , Introducing channel error with code =[1000] .
-At time [15.001], Node[0] [sent] frame with seq_num=[1] and payload=[$bj$] and trailer=[11110010] , Modified [19] , Lost [No], Duplicate [0], Delay [0]. 
-At time [15.001], Node[0] , Introducing channel error with code =[0000] .
-At time [15.501], Node[0] [sent] frame with seq_num=[2] and payload=[$cc$] and trailer=[11110000] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
-At time [15.501], Node[0] , Introducing channel error with code =[0001] .
-At time [16.001], Node[0] [sent] frame with seq_num=[3] and payload=[$dd$] and trailer=[11101110] , Modified [-1] , Lost [No], Duplicate [0], Delay [4]. 
-Uploading payload = [aa], Node[1] and seq_num = [0] to the network layer
-At time [16.001], Node[1] Sending [ACK] with number [1] ,loss [No].
-At time [16.501], Node[1] Sending [NACK] with number [1] ,loss [No].
-At time [17.001], Node[1] Sending [ACK] with number [1] ,loss [No].
-At time [17.001], Node[0] , Introducing channel error with code =[0100] .
-At time [17.501], Node[0] [sent] frame with seq_num=[4] and payload=[$ee$] and trailer=[11101100] , Modified [-1] , Lost [Yes], Duplicate [0], Delay [0]. 
-At time [17.502], Node[0] , Introducing channel error with code =[1000] .
-At time [18.002], Node[0] [sent] frame with seq_num=[1] and payload=[$bb$] and trailer=[11110010] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
-At time [18.002], Node[0] , Introducing channel error with code =[0000] .
-At time [18.502], Node[0] [sent] frame with seq_num=[2] and payload=[$cc$] and trailer=[11110000] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
-At time [18.502], Node[0] , Introducing channel error with code =[0001] .
-At time [19.002], Node[0] [sent] frame with seq_num=[3] and payload=[$dd$] and trailer=[11101110] , Modified [-1] , Lost [No], Duplicate [0], Delay [4]. 
-At time [19.002], Node[0] , Introducing channel error with code =[0100] .
-At time [19.502], Node[0] [sent] frame with seq_num=[4] and payload=[$ee$] and trailer=[11101100] , Modified [-1] , Lost [Yes], Duplicate [0], Delay [0]. 
-Uploading payload = [bb], Node[1] and seq_num = [1] to the network layer
-At time [19.502], Node[1] Sending [ACK] with number [2] ,loss [No].
-Uploading payload = [cc], Node[1] and seq_num = [2] to the network layer
-At time [20.002], Node[1] Sending [ACK] with number [3] ,loss [No].
-At time [20.502], Node[0] , Introducing channel error with code =[0000] .
-At time [21.002], Node[0] [sent] frame with seq_num=[0] and payload=[$ta$] and trailer=[11100001] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
-Uploading payload = [dd], Node[1] and seq_num = [3] to the network layer
-At time [21.501], Node[1] Sending [ACK] with number [4] ,loss [No].
-At time [21.002], Node[0] , Introducing channel error with code =[0000] .
-At time [21.502], Node[0] [sent] frame with seq_num=[1] and payload=[$tb$] and trailer=[11100000] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
-At time [22.502], Node[1] Sending [ACK] with number [4] ,loss [No].
-At time [22.501], Node[0] , Introducing channel error with code =[0000] .
-At time [23.001], Node[0] [sent] frame with seq_num=[2] and payload=[$tc$] and trailer=[11011111] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
-At time [23.002], Node[1] Sending [ACK] with number [4] ,loss [No].
-At time [24.501], Node[1] Sending [ACK] with number [4] ,loss [No].
-At time [24.502], Node[1] Sending [ACK] with number [4] ,loss [No].
-Time out event at time [29.501], at Node[0] for frame with seq_num= [4]
-At time [29.502], Node[0] , Introducing channel error with code =[0100] .
-At time [30.002], Node[0] [sent] frame with seq_num=[4] and payload=[$ee$] and trailer=[11101100] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
-At time [30.002], Node[0] , Introducing channel error with code =[0000] .
-At time [30.502], Node[0] [sent] frame with seq_num=[0] and payload=[$ta$] and trailer=[11100001] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
-At time [30.502], Node[0] , Introducing channel error with code =[0000] .
-At time [31.002], Node[0] [sent] frame with seq_num=[1] and payload=[$tb$] and trailer=[11100000] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
-At time [31.002], Node[0] , Introducing channel error with code =[0000] .
-At time [31.502], Node[0] [sent] frame with seq_num=[2] and payload=[$tc$] and trailer=[11011111] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
-Uploading payload = [ee], Node[1] and seq_num = [4] to the network layer
-At time [31.502], Node[1] Sending [ACK] with number [0] ,loss [No].
-Uploading payload = [ta], Node[1] and seq_num = [0] to the network layer
-At time [32.002], Node[1] Sending [ACK] with number [1] ,loss [No].
-Uploading payload = [tb], Node[1] and seq_num = [1] to the network layer
-At time [32.502], Node[1] Sending [ACK] with number [2] ,loss [No].
-Uploading payload = [tc], Node[1] and seq_num = [2] to the network layer
-At time [33.002], Node[1] Sending [ACK] with number [3] ,loss [No].
-At time [32.502], Node[0] , Introducing channel error with code =[0011] .
-At time [33.002], Node[0] [sent] frame with seq_num=[3] and payload=[$fa$] and trailer=[11101111] , Modified [-1] , Lost [No], Duplicate [1], Delay [4]. 
-At time [33.102], Node[0] [sent] frame with seq_num=[3] and payload=[$fa$] and trailer=[11101111] , Modified [-1] , Lost [No], Duplicate [2], Delay [4]. 
-At time [33.002], Node[0] , Introducing channel error with code =[0010] .
-At time [33.502], Node[0] [sent] frame with seq_num=[4] and payload=[$fb$] and trailer=[11101110] , Modified [-1] , Lost [No], Duplicate [1], Delay [0]. 
-At time [33.602], Node[0] [sent] frame with seq_num=[4] and payload=[$fb$] and trailer=[11101110] , Modified [-1] , Lost [No], Duplicate [2], Delay [0]. 
-At time [33.502], Node[0] , Introducing channel error with code =[1100] .
-At time [34.002], Node[0] [sent] frame with seq_num=[0] and payload=[$fg$] and trailer=[11101101] , Modified [18] , Lost [Yes], Duplicate [0], Delay [0]. 
-At time [35.002], Node[1] Sending [ACK] with number [3] ,loss [No].
-At time [35.102], Node[1] Sending [ACK] with number [3] ,loss [No].
-Uploading payload = [fa], Node[1] and seq_num = [3] to the network layer
-At time [38.502], Node[1] Sending [ACK] with number [4] ,loss [No].
-At time [38.602], Node[1] Sending [ACK] with number [4] ,loss [No].
-Time out event at time [43.502], at Node[0] for frame with seq_num= [4]
-At time [43.503], Node[0] , Introducing channel error with code =[0010] .
-At time [44.003], Node[0] [sent] frame with seq_num=[4] and payload=[$fb$] and trailer=[11101110] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
-At time [44.003], Node[0] , Introducing channel error with code =[1100] .
-At time [44.503], Node[0] [sent] frame with seq_num=[0] and payload=[$bc$] and trailer=[11101101] , Modified [10] , Lost [Yes], Duplicate [0], Delay [0]. 
-Uploading payload = [fb], Node[1] and seq_num = [4] to the network layer
-At time [45.503], Node[1] Sending [ACK] with number [0] ,loss [No].
-Time out event at time [54.502], at Node[0] for frame with seq_num= [0]
-At time [54.503], Node[0] , Introducing channel error with code =[1100] .
-At time [55.003], Node[0] [sent] frame with seq_num=[0] and payload=[$fc$] and trailer=[11101101] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
-Uploading payload = [fc], Node[1] and seq_num = [0] to the network layer
-At time [56.503], Node[1] Sending [ACK] with number [1] ,loss [No].
+At time [3], Node[1] Sending [ACK] with number [1] ,loss [No].
+At time [3.1], Node[1] Sending [ACK] with number [1] ,loss [No].
+At time [3], Node[0] , Introducing channel error with code =[0100] .
+At time [3.5], Node[0] [sent] frame with seq_num=[4] and payload=[$m4$] and trailer=[00010110] , Modified [-1] , Lost [Yes], Duplicate [0], Delay [0]. 
+Uploading payload = [m1], Node[1] and seq_num = [1] to the network layer
+At time [6.5], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [7.5], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [7.6], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [7.5], Node[0] , Introducing channel error with code =[0101] .
+At time [8], Node[0] [sent] frame with seq_num=[0] and payload=[$m5$] and trailer=[00010101] , Modified [-1] , Lost [Yes], Duplicate [0], Delay [4]. 
+Time out event at time [11.5], at Node[0] for frame with seq_num= [2]
+At time [12.001], Node[0] [sent] frame with seq_num=[2] and payload=[$m2$] and trailer=[00011000] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
+At time [12.001], Node[0] , Introducing channel error with code =[0011] .
+At time [12.501], Node[0] [sent] frame with seq_num=[3] and payload=[$m3$] and trailer=[00010111] , Modified [-1] , Lost [No], Duplicate [1], Delay [4]. 
+At time [12.601], Node[0] [sent] frame with seq_num=[3] and payload=[$m3$] and trailer=[00010111] , Modified [-1] , Lost [No], Duplicate [2], Delay [4]. 
+At time [12.501], Node[0] , Introducing channel error with code =[0100] .
+At time [13.001], Node[0] [sent] frame with seq_num=[4] and payload=[$m4$] and trailer=[00010110] , Modified [-1] , Lost [Yes], Duplicate [0], Delay [0]. 
+At time [13.001], Node[0] , Introducing channel error with code =[0101] .
+At time [13.501], Node[0] [sent] frame with seq_num=[0] and payload=[$m5$] and trailer=[00010101] , Modified [-1] , Lost [Yes], Duplicate [0], Delay [4]. 
+Uploading payload = [m2], Node[1] and seq_num = [2] to the network layer
+At time [13.501], Node[1] Sending [ACK] with number [3] ,loss [No].
+At time [14.501], Node[0] , Introducing channel error with code =[0110] .
+At time [15.001], Node[0] [sent] frame with seq_num=[1] and payload=[$m6$] and trailer=[00010100] , Modified [-1] , Lost [Yes], Duplicate [1], Delay [0]. 
+At time [15.101], Node[0] [sent] frame with seq_num=[1] and payload=[$m6$] and trailer=[00010100] , Modified [-1] , Lost [Yes], Duplicate [2], Delay [0]. 
+Uploading payload = [m3], Node[1] and seq_num = [3] to the network layer
+At time [18.001], Node[1] Sending [ACK] with number [4] ,loss [No].
+At time [18.101], Node[1] Sending [ACK] with number [4] ,loss [No].
+At time [19.001], Node[0] , Introducing channel error with code =[0111] .
+At time [19.501], Node[0] [sent] frame with seq_num=[2] and payload=[$m7$] and trailer=[00010011] , Modified [-1] , Lost [Yes], Duplicate [1], Delay [4]. 
+At time [19.601], Node[0] [sent] frame with seq_num=[2] and payload=[$m7$] and trailer=[00010011] , Modified [-1] , Lost [Yes], Duplicate [2], Delay [4]. 
+Time out event at time [23], at Node[0] for frame with seq_num= [4]
+At time [23.501], Node[0] [sent] frame with seq_num=[4] and payload=[$m4$] and trailer=[00010110] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
+At time [23.501], Node[0] , Introducing channel error with code =[0101] .
+At time [24.001], Node[0] [sent] frame with seq_num=[0] and payload=[$m5$] and trailer=[00010101] , Modified [-1] , Lost [Yes], Duplicate [0], Delay [4]. 
+At time [24.001], Node[0] , Introducing channel error with code =[0110] .
+At time [24.501], Node[0] [sent] frame with seq_num=[1] and payload=[$m6$] and trailer=[00010100] , Modified [-1] , Lost [Yes], Duplicate [1], Delay [0]. 
+At time [24.601], Node[0] [sent] frame with seq_num=[1] and payload=[$m6$] and trailer=[00010100] , Modified [-1] , Lost [Yes], Duplicate [2], Delay [0]. 
+At time [24.501], Node[0] , Introducing channel error with code =[0111] .
+At time [25.001], Node[0] [sent] frame with seq_num=[2] and payload=[$m7$] and trailer=[00010011] , Modified [-1] , Lost [Yes], Duplicate [1], Delay [4]. 
+At time [25.101], Node[0] [sent] frame with seq_num=[2] and payload=[$m7$] and trailer=[00010011] , Modified [-1] , Lost [Yes], Duplicate [2], Delay [4]. 
+Uploading payload = [m4], Node[1] and seq_num = [4] to the network layer
+At time [25.001], Node[1] Sending [ACK] with number [0] ,loss [No].
+At time [26.001], Node[0] , Introducing channel error with code =[1000] .
+At time [26.501], Node[0] [sent] frame with seq_num=[3] and payload=[$m($] and trailer=[00010010] , Modified [20] , Lost [No], Duplicate [0], Delay [0]. 
+At time [28.001], Node[1] Sending [ACK] with number [0] ,loss [No].
+Time out event at time [34], at Node[0] for frame with seq_num= [0]
+At time [34.501], Node[0] [sent] frame with seq_num=[0] and payload=[$m5$] and trailer=[00010101] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
+At time [34.501], Node[0] , Introducing channel error with code =[0110] .
+At time [35.001], Node[0] [sent] frame with seq_num=[1] and payload=[$m6$] and trailer=[00010100] , Modified [-1] , Lost [Yes], Duplicate [1], Delay [0]. 
+At time [35.101], Node[0] [sent] frame with seq_num=[1] and payload=[$m6$] and trailer=[00010100] , Modified [-1] , Lost [Yes], Duplicate [2], Delay [0]. 
+At time [35.001], Node[0] , Introducing channel error with code =[0111] .
+At time [35.501], Node[0] [sent] frame with seq_num=[2] and payload=[$m7$] and trailer=[00010011] , Modified [-1] , Lost [Yes], Duplicate [1], Delay [4]. 
+At time [35.601], Node[0] [sent] frame with seq_num=[2] and payload=[$m7$] and trailer=[00010011] , Modified [-1] , Lost [Yes], Duplicate [2], Delay [4]. 
+At time [35.501], Node[0] , Introducing channel error with code =[1000] .
+At time [36.001], Node[0] [sent] frame with seq_num=[3] and payload=[$-8$] and trailer=[00010010] , Modified [14] , Lost [No], Duplicate [0], Delay [0]. 
+Uploading payload = [m5], Node[1] and seq_num = [0] to the network layer
+At time [36.001], Node[1] Sending [ACK] with number [1] ,loss [No].
+At time [37.501], Node[1] Sending [ACK] with number [1] ,loss [No].
+At time [37.001], Node[0] , Introducing channel error with code =[1001] .
+At time [37.501], Node[0] [sent] frame with seq_num=[4] and payload=[&m9$] and trailer=[00010001] , Modified [1] , Lost [No], Duplicate [0], Delay [4]. 
+At time [43.001], Node[1] Sending [ACK] with number [1] ,loss [No].
+Time out event at time [45], at Node[0] for frame with seq_num= [1]
+At time [45.501], Node[0] [sent] frame with seq_num=[1] and payload=[$m6$] and trailer=[00010100] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
+At time [45.501], Node[0] , Introducing channel error with code =[0111] .
+At time [46.001], Node[0] [sent] frame with seq_num=[2] and payload=[$m7$] and trailer=[00010011] , Modified [-1] , Lost [Yes], Duplicate [1], Delay [4]. 
+At time [46.101], Node[0] [sent] frame with seq_num=[2] and payload=[$m7$] and trailer=[00010011] , Modified [-1] , Lost [Yes], Duplicate [2], Delay [4]. 
+At time [46.001], Node[0] , Introducing channel error with code =[1000] .
+At time [46.501], Node[0] [sent] frame with seq_num=[3] and payload=[$l8$] and trailer=[00010010] , Modified [8] , Lost [No], Duplicate [0], Delay [0]. 
+At time [46.501], Node[0] , Introducing channel error with code =[1001] .
+At time [47.001], Node[0] [sent] frame with seq_num=[4] and payload=[$}9$] and trailer=[00010001] , Modified [12] , Lost [No], Duplicate [0], Delay [4]. 
+Uploading payload = [m6], Node[1] and seq_num = [1] to the network layer
+At time [47.001], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [48.001], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [48.001], Node[0] , Introducing channel error with code =[1010] .
+At time [48.501], Node[0] [sent] frame with seq_num=[0] and payload=[$m10%] and trailer=[11101000] , Modified [32] , Lost [No], Duplicate [1], Delay [0]. 
+At time [48.601], Node[0] [sent] frame with seq_num=[0] and payload=[$m10%] and trailer=[11101000] , Modified [32] , Lost [No], Duplicate [2], Delay [0]. 
+At time [50.001], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [50.101], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [52.501], Node[1] Sending [ACK] with number [2] ,loss [No].
+Time out event at time [56], at Node[0] for frame with seq_num= [2]
+At time [56.501], Node[0] [sent] frame with seq_num=[2] and payload=[$m7$] and trailer=[00010011] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
+At time [56.501], Node[0] , Introducing channel error with code =[1000] .
+At time [57.001], Node[0] [sent] frame with seq_num=[3] and payload=[$}8$] and trailer=[00010010] , Modified [12] , Lost [No], Duplicate [0], Delay [0]. 
+At time [57.001], Node[0] , Introducing channel error with code =[1001] .
+At time [57.501], Node[0] [sent] frame with seq_num=[4] and payload=[$m9] and trailer=[00010001] , Modified [29] , Lost [No], Duplicate [0], Delay [4]. 
+At time [57.501], Node[0] , Introducing channel error with code =[1010] .
+At time [58.001], Node[0] [sent] frame with seq_num=[0] and payload=[$m10&] and trailer=[11101000] , Modified [33] , Lost [No], Duplicate [1], Delay [0]. 
+At time [58.101], Node[0] [sent] frame with seq_num=[0] and payload=[$m10&] and trailer=[11101000] , Modified [33] , Lost [No], Duplicate [2], Delay [0]. 
+Uploading payload = [m7], Node[1] and seq_num = [2] to the network layer
+At time [58.001], Node[1] Sending [ACK] with number [3] ,loss [No].
+At time [58.501], Node[1] Sending [NACK] with number [3] ,loss [No].
+At time [59.501], Node[1] Sending [ACK] with number [3] ,loss [No].
+At time [59.001], Node[0] , Introducing channel error with code =[1011] .
+At time [59.501], Node[0] [sent] frame with seq_num=[1] and payload=[$m13$] and trailer=[11100111] , Modified [25] , Lost [No], Duplicate [1], Delay [4]. 
+At time [59.601], Node[0] [sent] frame with seq_num=[1] and payload=[$m13$] and trailer=[11100111] , Modified [25] , Lost [No], Duplicate [2], Delay [4]. 
+At time [59.601], Node[1] Sending [ACK] with number [3] ,loss [No].
+At time [60.002], Node[0] [sent] frame with seq_num=[3] and payload=[$m8$] and trailer=[00010010] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
+At time [60.002], Node[0] , Introducing channel error with code =[1001] .
+At time [60.502], Node[0] [sent] frame with seq_num=[4] and payload=[$e9$] and trailer=[00010001] , Modified [11] , Lost [No], Duplicate [0], Delay [4]. 
+At time [60.502], Node[0] , Introducing channel error with code =[1010] .
+At time [61.002], Node[0] [sent] frame with seq_num=[0] and payload=[$m10&] and trailer=[11101000] , Modified [33] , Lost [No], Duplicate [1], Delay [0]. 
+At time [61.102], Node[0] [sent] frame with seq_num=[0] and payload=[$m10&] and trailer=[11101000] , Modified [33] , Lost [No], Duplicate [2], Delay [0]. 
+At time [61.002], Node[0] , Introducing channel error with code =[1011] .
+At time [61.502], Node[0] [sent] frame with seq_num=[1] and payload=[$m11d] and trailer=[11100111] , Modified [38] , Lost [No], Duplicate [1], Delay [4]. 
+At time [61.602], Node[0] [sent] frame with seq_num=[1] and payload=[$m11d] and trailer=[11100111] , Modified [38] , Lost [No], Duplicate [2], Delay [4]. 
+Uploading payload = [m8], Node[1] and seq_num = [3] to the network layer
+At time [61.502], Node[1] Sending [ACK] with number [4] ,loss [No].
+At time [62.502], Node[1] Sending [ACK] with number [4] ,loss [No].
+At time [62.602], Node[1] Sending [ACK] with number [4] ,loss [No].
+At time [63.001], Node[1] Sending [NACK] with number [4] ,loss [No].
+At time [62.502], Node[0] , Introducing channel error with code =[1100] .
+At time [63.002], Node[0] [sent] frame with seq_num=[2] and payload=[$m12¤] and trailer=[11100110] , Modified [39] , Lost [Yes], Duplicate [0], Delay [0]. 
+At time [64.502], Node[0] [sent] frame with seq_num=[4] and payload=[$m9$] and trailer=[00010001] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
+At time [64.502], Node[0] , Introducing channel error with code =[1010] .
+At time [65.002], Node[0] [sent] frame with seq_num=[0] and payload=[$m50$] and trailer=[11101000] , Modified [18] , Lost [No], Duplicate [1], Delay [0]. 
+At time [65.102], Node[0] [sent] frame with seq_num=[0] and payload=[$m50$] and trailer=[11101000] , Modified [18] , Lost [No], Duplicate [2], Delay [0]. 
+At time [65.002], Node[0] , Introducing channel error with code =[1011] .
+At time [65.502], Node[0] [sent] frame with seq_num=[1] and payload=[$m1±$] and trailer=[11100111] , Modified [31] , Lost [No], Duplicate [1], Delay [4]. 
+At time [65.602], Node[0] [sent] frame with seq_num=[1] and payload=[$m1±$] and trailer=[11100111] , Modified [31] , Lost [No], Duplicate [2], Delay [4]. 
+At time [65.502], Node[0] , Introducing channel error with code =[1100] .
+At time [66.002], Node[0] [sent] frame with seq_num=[2] and payload=[$m12%] and trailer=[11100110] , Modified [32] , Lost [Yes], Duplicate [0], Delay [0]. 
+At time [65.001], Node[1] Sending [ACK] with number [4] ,loss [No].
+At time [65.101], Node[1] Sending [ACK] with number [4] ,loss [No].
+At time [66.002], Node[1] Sending [NACK] with number [4] ,loss [No].
+Uploading payload = [m9], Node[1] and seq_num = [4] to the network layer
+At time [66.002], Node[1] Sending [ACK] with number [0] ,loss [No].
+At time [66.502], Node[1] Sending [NACK] with number [0] ,loss [No].
+At time [66.602], Node[1] Sending [NACK] with number [0] ,loss [No].
+At time [67.002], Node[1] Sending [ACK] with number [0] ,loss [No].
+At time [67.102], Node[1] Sending [ACK] with number [0] ,loss [No].
+At time [67.503], Node[0] [sent] frame with seq_num=[4] and payload=[$m9$] and trailer=[00010001] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
+At time [67.503], Node[0] , Introducing channel error with code =[1010] .
+At time [68.003], Node[0] [sent] frame with seq_num=[0] and payload=[m10$] and trailer=[11101000] , Modified [5] , Lost [No], Duplicate [1], Delay [0]. 
+At time [68.103], Node[0] [sent] frame with seq_num=[0] and payload=[m10$] and trailer=[11101000] , Modified [5] , Lost [No], Duplicate [2], Delay [0]. 
+At time [68.003], Node[0] , Introducing channel error with code =[1011] .
+At time [68.503], Node[0] [sent] frame with seq_num=[1] and payload=[$m1$] and trailer=[11100111] , Modified [21] , Lost [No], Duplicate [1], Delay [4]. 
+At time [68.603], Node[0] [sent] frame with seq_num=[1] and payload=[$m1$] and trailer=[11100111] , Modified [21] , Lost [No], Duplicate [2], Delay [4]. 
+At time [68.503], Node[0] , Introducing channel error with code =[1100] .
+At time [69.003], Node[0] [sent] frame with seq_num=[2] and payload=[$m12] and trailer=[11100110] , Modified [37] , Lost [Yes], Duplicate [0], Delay [0]. 
+At time [67.002], Node[0] , Introducing channel error with code =[1101] .
+At time [67.502], Node[0] [sent] frame with seq_num=[3] and payload=[$m1s$] and trailer=[11100101] , Modified [30] , Lost [Yes], Duplicate [0], Delay [4]. 
+At time [68.003], Node[0] [sent] frame with seq_num=[0] and payload=[$m10$] and trailer=[11101000] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
+At time [68.003], Node[0] , Introducing channel error with code =[1011] .
+At time [68.503], Node[0] [sent] frame with seq_num=[1] and payload=[$m!1$] and trailer=[11100111] , Modified [20] , Lost [No], Duplicate [1], Delay [4]. 
+At time [68.603], Node[0] [sent] frame with seq_num=[1] and payload=[$m!1$] and trailer=[11100111] , Modified [20] , Lost [No], Duplicate [2], Delay [4]. 
+At time [68.503], Node[0] , Introducing channel error with code =[1100] .
+At time [69.003], Node[0] [sent] frame with seq_num=[2] and payload=[4m12$] and trailer=[11100110] , Modified [4] , Lost [Yes], Duplicate [0], Delay [0]. 
+At time [69.003], Node[0] , Introducing channel error with code =[1101] .
+At time [69.503], Node[0] [sent] frame with seq_num=[3] and payload=[$m03$] and trailer=[11100101] , Modified [16] , Lost [Yes], Duplicate [0], Delay [4]. 
+At time [68.103], Node[0] [sent] frame with seq_num=[0] and payload=[$m10$] and trailer=[11101000] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
+At time [68.103], Node[0] , Introducing channel error with code =[1011] .
+At time [68.603], Node[0] [sent] frame with seq_num=[1] and payload=[$m51$] and trailer=[11100111] , Modified [18] , Lost [No], Duplicate [1], Delay [4]. 
+At time [68.703], Node[0] [sent] frame with seq_num=[1] and payload=[$m51$] and trailer=[11100111] , Modified [18] , Lost [No], Duplicate [2], Delay [4]. 
+At time [68.603], Node[0] , Introducing channel error with code =[1100] .
+At time [69.103], Node[0] [sent] frame with seq_num=[2] and payload=[$i12$] and trailer=[11100110] , Modified [10] , Lost [Yes], Duplicate [0], Delay [0]. 
+At time [69.103], Node[0] , Introducing channel error with code =[1101] .
+At time [69.603], Node[0] [sent] frame with seq_num=[3] and payload=[¤m13$] and trailer=[11100101] , Modified [7] , Lost [Yes], Duplicate [0], Delay [4]. 
+At time [69.003], Node[1] Sending [ACK] with number [0] ,loss [No].
+At time [69.503], Node[1] Sending [NACK] with number [0] ,loss [No].
+Uploading payload = [m10], Node[1] and seq_num = [0] to the network layer
+At time [69.503], Node[1] Sending [ACK] with number [1] ,loss [No].
+At time [69.603], Node[1] Sending [ACK] with number [1] ,loss [No].
+At time [69.603], Node[1] Sending [ACK] with number [1] ,loss [No].
+At time [71.002], Node[1] Sending [NACK] with number [1] ,loss [No].
+At time [71.004], Node[0] [sent] frame with seq_num=[0] and payload=[$m10$] and trailer=[11101000] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
+At time [71.004], Node[0] , Introducing channel error with code =[1011] .
+At time [71.504], Node[0] [sent] frame with seq_num=[1] and payload=[%m11$] and trailer=[11100111] , Modified [0] , Lost [No], Duplicate [1], Delay [4]. 
+At time [71.604], Node[0] [sent] frame with seq_num=[1] and payload=[%m11$] and trailer=[11100111] , Modified [0] , Lost [No], Duplicate [2], Delay [4]. 
+At time [71.504], Node[0] , Introducing channel error with code =[1100] .
+At time [72.004], Node[0] [sent] frame with seq_num=[2] and payload=[$}12$] and trailer=[11100110] , Modified [12] , Lost [Yes], Duplicate [0], Delay [0]. 
+At time [72.004], Node[0] , Introducing channel error with code =[1101] .
+At time [72.504], Node[0] [sent] frame with seq_num=[3] and payload=[$m12$] and trailer=[11100101] , Modified [24] , Lost [Yes], Duplicate [0], Delay [4]. 
+At time [70.503], Node[0] , Introducing channel error with code =[1110] .
+At time [71.003], Node[0] [sent] frame with seq_num=[4] and payload=[m14$] and trailer=[11100100] , Modified [5] , Lost [Yes], Duplicate [1], Delay [0]. 
+At time [71.103], Node[0] [sent] frame with seq_num=[4] and payload=[m14$] and trailer=[11100100] , Modified [5] , Lost [Yes], Duplicate [2], Delay [0]. 
+At time [71.102], Node[1] Sending [NACK] with number [1] ,loss [No].
+At time [72.503], Node[0] [sent] frame with seq_num=[1] and payload=[$m11$] and trailer=[11100111] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
+At time [72.503], Node[0] , Introducing channel error with code =[1100] .
+At time [73.003], Node[0] [sent] frame with seq_num=[2] and payload=[$l12$] and trailer=[11100110] , Modified [8] , Lost [Yes], Duplicate [0], Delay [0]. 
+At time [73.003], Node[0] , Introducing channel error with code =[1101] .
+At time [73.503], Node[0] [sent] frame with seq_num=[3] and payload=[$m12$] and trailer=[11100101] , Modified [24] , Lost [Yes], Duplicate [0], Delay [4]. 
+At time [73.503], Node[0] , Introducing channel error with code =[1110] .
+At time [74.003], Node[0] [sent] frame with seq_num=[4] and payload=[$í14$] and trailer=[11100100] , Modified [15] , Lost [Yes], Duplicate [1], Delay [0]. 
+At time [74.103], Node[0] [sent] frame with seq_num=[4] and payload=[$í14$] and trailer=[11100100] , Modified [15] , Lost [Yes], Duplicate [2], Delay [0]. 
+At time [72.504], Node[1] Sending [ACK] with number [1] ,loss [No].
+At time [72.603], Node[0] [sent] frame with seq_num=[1] and payload=[$m11$] and trailer=[11100111] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
+At time [72.603], Node[0] , Introducing channel error with code =[1100] .
+At time [73.103], Node[0] [sent] frame with seq_num=[2] and payload=[$m124] and trailer=[11100110] , Modified [36] , Lost [Yes], Duplicate [0], Delay [0]. 
+At time [73.103], Node[0] , Introducing channel error with code =[1101] .
+At time [73.603], Node[0] [sent] frame with seq_num=[3] and payload=[$m1;$] and trailer=[11100101] , Modified [27] , Lost [Yes], Duplicate [0], Delay [4]. 
+At time [73.603], Node[0] , Introducing channel error with code =[1110] .
+At time [74.103], Node[0] [sent] frame with seq_num=[4] and payload=[$m34$] and trailer=[11100100] , Modified [17] , Lost [Yes], Duplicate [1], Delay [0]. 
+At time [74.203], Node[0] [sent] frame with seq_num=[4] and payload=[$m34$] and trailer=[11100100] , Modified [17] , Lost [Yes], Duplicate [2], Delay [0]. 
+At time [74.003], Node[1] Sending [NACK] with number [1] ,loss [No].
+At time [74.003], Node[1] Sending [NACK] with number [1] ,loss [No].
+Uploading payload = [m11], Node[1] and seq_num = [1] to the network layer
+At time [74.003], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [74.103], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [74.103], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [74.103], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [74.103], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [74.203], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [75.504], Node[0] [sent] frame with seq_num=[1] and payload=[$m11$] and trailer=[11100111] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
+At time [75.504], Node[0] , Introducing channel error with code =[1100] .
+At time [76.004], Node[0] [sent] frame with seq_num=[2] and payload=[$m16$] and trailer=[11100110] , Modified [26] , Lost [Yes], Duplicate [0], Delay [0]. 
+At time [76.004], Node[0] , Introducing channel error with code =[1101] .
+At time [76.504], Node[0] [sent] frame with seq_num=[3] and payload=[$m17$] and trailer=[11100101] , Modified [26] , Lost [Yes], Duplicate [0], Delay [4]. 
+At time [76.504], Node[0] , Introducing channel error with code =[1110] .
+At time [77.004], Node[0] [sent] frame with seq_num=[4] and payload=[$m10$] and trailer=[11100100] , Modified [26] , Lost [Yes], Duplicate [1], Delay [0]. 
+At time [77.104], Node[0] [sent] frame with seq_num=[4] and payload=[$m10$] and trailer=[11100100] , Modified [26] , Lost [Yes], Duplicate [2], Delay [0]. 
+At time [75.504], Node[0] [sent] frame with seq_num=[1] and payload=[$m11$] and trailer=[11100111] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
+At time [75.504], Node[0] , Introducing channel error with code =[1100] .
+At time [76.004], Node[0] [sent] frame with seq_num=[2] and payload=[dm12$] and trailer=[11100110] , Modified [6] , Lost [Yes], Duplicate [0], Delay [0]. 
+At time [76.004], Node[0] , Introducing channel error with code =[1101] .
+At time [76.504], Node[0] [sent] frame with seq_num=[3] and payload=[$l13$] and trailer=[11100101] , Modified [8] , Lost [Yes], Duplicate [0], Delay [4]. 
+At time [76.504], Node[0] , Introducing channel error with code =[1110] .
+At time [77.004], Node[0] [sent] frame with seq_num=[4] and payload=[$-14$] and trailer=[11100100] , Modified [14] , Lost [Yes], Duplicate [1], Delay [0]. 
+At time [77.104], Node[0] [sent] frame with seq_num=[4] and payload=[$-14$] and trailer=[11100100] , Modified [14] , Lost [Yes], Duplicate [2], Delay [0]. 
+At time [75.003], Node[0] , Introducing channel error with code =[1111] .
+At time [75.503], Node[0] [sent] frame with seq_num=[0] and payload=[m15$] and trailer=[11100011] , Modified [5] , Lost [Yes], Duplicate [1], Delay [4]. 
+At time [75.603], Node[0] [sent] frame with seq_num=[0] and payload=[m15$] and trailer=[11100011] , Modified [5] , Lost [Yes], Duplicate [2], Delay [4]. 
+At time [77.004], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [77.004], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [77.004], Node[1] Sending [ACK] with number [2] ,loss [No].
+At time [77.104], Node[1] Sending [ACK] with number [2] ,loss [No].
+Time out event at time [85.503], at Node[0] for frame with seq_num= [2]
+At time [86.004], Node[0] [sent] frame with seq_num=[2] and payload=[$m12$] and trailer=[11100110] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
+At time [86.004], Node[0] , Introducing channel error with code =[1101] .
+At time [86.504], Node[0] [sent] frame with seq_num=[3] and payload=[$M13$] and trailer=[11100101] , Modified [13] , Lost [Yes], Duplicate [0], Delay [4]. 
+At time [86.504], Node[0] , Introducing channel error with code =[1110] .
+At time [87.004], Node[0] [sent] frame with seq_num=[4] and payload=[$mq4$] and trailer=[11100100] , Modified [22] , Lost [Yes], Duplicate [1], Delay [0]. 
+At time [87.104], Node[0] [sent] frame with seq_num=[4] and payload=[$mq4$] and trailer=[11100100] , Modified [22] , Lost [Yes], Duplicate [2], Delay [0]. 
+At time [87.004], Node[0] , Introducing channel error with code =[1111] .
+At time [87.504], Node[0] [sent] frame with seq_num=[0] and payload=[&m15$] and trailer=[11100011] , Modified [1] , Lost [Yes], Duplicate [1], Delay [4]. 
+At time [87.604], Node[0] [sent] frame with seq_num=[0] and payload=[&m15$] and trailer=[11100011] , Modified [1] , Lost [Yes], Duplicate [2], Delay [4]. 
+Uploading payload = [m12], Node[1] and seq_num = [2] to the network layer
+At time [87.504], Node[1] Sending [ACK] with number [3] ,loss [No].
+Time out event at time [96.503], at Node[0] for frame with seq_num= [3]
+At time [97.004], Node[0] [sent] frame with seq_num=[3] and payload=[$m13$] and trailer=[11100101] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
+At time [97.004], Node[0] , Introducing channel error with code =[1110] .
+At time [97.504], Node[0] [sent] frame with seq_num=[4] and payload=[$m16$] and trailer=[11100100] , Modified [25] , Lost [Yes], Duplicate [1], Delay [0]. 
+At time [97.604], Node[0] [sent] frame with seq_num=[4] and payload=[$m16$] and trailer=[11100100] , Modified [25] , Lost [Yes], Duplicate [2], Delay [0]. 
+At time [97.504], Node[0] , Introducing channel error with code =[1111] .
+At time [98.004], Node[0] [sent] frame with seq_num=[0] and payload=[$m15¤] and trailer=[11100011] , Modified [39] , Lost [Yes], Duplicate [1], Delay [4]. 
+At time [98.104], Node[0] [sent] frame with seq_num=[0] and payload=[$m15¤] and trailer=[11100011] , Modified [39] , Lost [Yes], Duplicate [2], Delay [4]. 
+Uploading payload = [m13], Node[1] and seq_num = [3] to the network layer
+At time [98.504], Node[1] Sending [ACK] with number [4] ,loss [No].
+Time out event at time [107.503], at Node[0] for frame with seq_num= [4]
+At time [108.004], Node[0] [sent] frame with seq_num=[4] and payload=[$m14$] and trailer=[11100100] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
+At time [108.004], Node[0] , Introducing channel error with code =[1111] .
+At time [108.504], Node[0] [sent] frame with seq_num=[0] and payload=[4m15$] and trailer=[11100011] , Modified [4] , Lost [Yes], Duplicate [1], Delay [4]. 
+At time [108.604], Node[0] [sent] frame with seq_num=[0] and payload=[4m15$] and trailer=[11100011] , Modified [4] , Lost [Yes], Duplicate [2], Delay [4]. 
+Uploading payload = [m14], Node[1] and seq_num = [4] to the network layer
+At time [109.504], Node[1] Sending [ACK] with number [0] ,loss [No].
+Time out event at time [118.503], at Node[0] for frame with seq_num= [0]
+At time [119.004], Node[0] [sent] frame with seq_num=[0] and payload=[$m15$] and trailer=[11100011] , Modified [-1] , Lost [No], Duplicate [0], Delay [0]. 
+Uploading payload = [m15], Node[1] and seq_num = [0] to the network layer
+At time [120.504], Node[1] Sending [ACK] with number [1] ,loss [No].
