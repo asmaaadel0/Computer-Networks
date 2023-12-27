@@ -262,6 +262,15 @@ bool Node::checkMessage(MyMessage_Base* message)
         int sum = std::stoi(sumHex, nullptr, 16) + std::stoi(group, nullptr, 16);
         ss << std::hex << sum;
         sumHex = ss.str();
+        // Ensure the result is 2 characters
+        if (sumHex.length() > 2) {
+            std::string lastDigit = sumHex.substr(0,1);
+            std::stringstream ss;
+            sumHex = sumHex.substr(1, sumHex.size());
+            int sum = std::stoi(sumHex, nullptr, 16) + std::stoi(lastDigit, nullptr, 16);
+            ss << std::hex << sum;
+            sumHex = ss.str();
+        }
     }
     if (sumHex.length() > 2) {
         std::string lastDigit = sumHex.substr(0,1);
