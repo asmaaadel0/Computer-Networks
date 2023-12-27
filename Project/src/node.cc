@@ -314,7 +314,7 @@ void Node::sendingMessageHandler(MyMessage_Base *message, const std::bitset<4> c
     if (modify)
     {
         bitToModify = int(uniform(0, currentMsgbits.size() * 8));
-        currentMsgbits[bitToModify/8].flip(bitToModify%8);
+        currentMsgbits[bitToModify/8].flip(8 - (bitToModify%8));
     }
     if(delay)
     {
