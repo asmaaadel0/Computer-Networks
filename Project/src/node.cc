@@ -132,14 +132,14 @@ void Node::printSendingMessage(MyMessage_Base* message, int bitToModify, std::st
     fout.open("output.txt", std::fstream::app);
     fout <<  "At time [" << time << "]," <<
         " Node[" << getIndex() << "] [sent] frame with seq_num=[" << message->getHeader() << "] and payload=[" << message->getPayload() << "]" <<
-        " and trailer=["<< trailer<< "] , Modified [" << bitToModify << "] "
+        " and trailer=["<< trailer<< "] , Modified [" << bitToModify +1   << "] "
         ", Lost [" << lossMsg << "], Duplicate [" << dup << "], "
         "Delay [" << (delay ? par("ED").doubleValue() : 0) << "]. "<< endl;
     fout.close();
 
     EV <<  "At time [" << time << "]," <<
         " Node[" << getIndex() << "] [sent] frame with seq_num=[" << message->getHeader() << "] and payload=[" << message->getPayload() << "]" <<
-        " and trailer=["<< trailer<< "] , Modified [" <<bitToModify << "] "
+        " and trailer=["<< trailer<< "] , Modified [" <<bitToModify +1 << "] "
         ", Lost [" << lossMsg << "], Duplicate [" << dup << "], "
         "Delay [" << (delay ? par("ED").doubleValue() : 0) << "]. "<< endl;
 }
@@ -299,7 +299,7 @@ void Node::sendingMessageHandler(MyMessage_Base *message, const std::bitset<4> c
 
 
     double time = 0;
-    int bitToModify = -1;
+    int bitToModify = -2;
     std::string lossMsg = "No";
     time = par("PT").doubleValue()*(m + 1 - nextFrameToSendTemp) + par("TD").doubleValue() ;
 
@@ -314,7 +314,7 @@ void Node::sendingMessageHandler(MyMessage_Base *message, const std::bitset<4> c
     if (modify)
     {
         bitToModify = int(uniform(0, currentMsgbits.size() * 8));
-        currentMsgbits[bitToModify/8].flip(8 - (bitToModify%8));
+        currentMsgbits[bitToModify/8].flip(8 - (bitToModify%8) -1);
     }
     if(delay)
     {
@@ -335,7 +335,7 @@ void Node::sendingMessageHandler(MyMessage_Base *message, const std::bitset<4> c
     {
         MyMessage_Base *dupFrame = message->dup();
         std::bitset<8> trailer2(dupFrame->getTrailer());
-        printSendingMessage(dupFrame, bitToModify, lossMsg, 2, delay, m, nextFrameToSendTemp, resend);
+        printSendingMessage(dupFrame, bitToModify , lossMsg, 2, delay, m, nextFrameToSendTemp, resend);
         if(!loss)
             sendDelayed(dupFrame, (time + par("DD").doubleValue()), "out");
     }
