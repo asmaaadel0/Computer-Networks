@@ -1,8 +1,8 @@
 version 3
-run General-0-20231227-16:35:27-12472
+run General-0-20231227-23:38:45-10692
 attr configname General
-attr datetime 20231227-16:35:27
-attr datetimef 20231227-163527
+attr datetime 20231227-23:38:45
+attr datetimef 20231227-233845
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -10,52 +10,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network network_project.Network
-attr processid 12472
-attr repetition 0
-attr replication #0
-attr resultdir results
-attr runnumber 0
-attr seedset 0
-config network network_project.Network
-config **.WS 4
-config **.TO 10.0
-config **.PT 0.5
-config **.TD 1.0
-config **.ED 4.0
-config **.DD 0.1
-config **.LP -1.0
-
-par Network.nodes[0] typename "\"network_project.Node\""
-par Network.nodes[0] WS 4
-par Network.nodes[0] TO 10
-par Network.nodes[0] PT 0.5
-par Network.nodes[0] TD 1
-par Network.nodes[0] ED 4
-par Network.nodes[0] DD 0.1
-par Network.nodes[0] LP -1
-par Network.nodes[1] typename "\"network_project.Node\""
-par Network.nodes[1] WS 4
-par Network.nodes[1] TO 10
-par Network.nodes[1] PT 0.5
-par Network.nodes[1] TD 1
-par Network.nodes[1] ED 4
-par Network.nodes[1] DD 0.1
-par Network.nodes[1] LP -1
-par Network.master typename "\"network_project.Master\""
-par Network typename "\"network_project.Network\""
-
-run General-0-20231227-16:33:27-3188
-attr configname General
-attr datetime 20231227-16:33:27
-attr datetimef 20231227-163327
-attr experiment General
-attr inifile omnetpp.ini
-attr iterationvars ""
-attr iterationvarsd ""
-attr iterationvarsf ""
-attr measurement ""
-attr network network_project.Network
-attr processid 3188
+attr processid 10692
 attr repetition 0
 attr replication #0
 attr resultdir results
