@@ -515,7 +515,7 @@ void Node::handleMessage(cMessage *msg)
             {
                 MyMessage_Base *newMessage = message->dup();
                 bool isTrue = checkMessage(message);
-                bool isLost = uniform(0, 100) < (int)par("LP").doubleValue();
+                bool isLost = uniform(0, 1) < par("LP").doubleValue();
 
 //                if(deFraming(newMessage->getPayload()) == "aaaa") {
 //                    isLost = true;
