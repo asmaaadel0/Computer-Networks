@@ -43,10 +43,9 @@ private:
     std::string framing(std::string payload);
     std::string deFraming(std::string framedPayload);
 
-    void printReadingMessage(int m, int nextFrameToSendTemp);
+    void printReadingMessage(int m, int nextFrameToSendTemp, bool resend);
     void printTimeoutMessage(int ackExpected);
-    void printSendingMessage(MyMessage_Base* message, int bitToModify, std::string lossMsg, int dup, int delay,int m, int nextFrameToSendTemp);
-//    void printSendingReceiverMessage(std::string payload, std::string lossMsg, std::string isAck, int number);
+    void printSendingMessage(MyMessage_Base* message, int bitToModify, std::string lossMsg, int dup, int delay,int m, int nextFrameToSendTemp, bool resend);
     void printSendingReceiverMessage(std::string lossMsg, std::string isAck, int number);
     void printReceivedReceiverMessage(std::string payload, int number);
 
@@ -54,11 +53,10 @@ private:
     std::string calculateOnesComplement(const std::string& hexString);
     bool checkMessage(MyMessage_Base* message);
 
-    void sendingMessageHandler(MyMessage_Base *message, const std::bitset<4> currentErrors, int m, int nextFrameToSendTemp, bool isNewMessage);
+    void sendingMessageHandler(MyMessage_Base *message, const std::bitset<4> currentErrors, int m, int nextFrameToSendTemp, bool resend);
     void FrameSending();
 
     std::vector<cMessage *> timeoutEvents;
-    std::vector<MyMessage_Base *> sendingMessages;
 
     int nbuffered;
     int nextFrameToSend;
